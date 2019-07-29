@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'ruby-mysql'
 gem "figaro"
+# For user authentication
+gem "devise"
+# For layout and helpers generators
+gem "nifty-generators", :group => :development
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
