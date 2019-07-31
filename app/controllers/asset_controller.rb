@@ -37,7 +37,9 @@ class AssetController < ApplicationController
     # whitelist params
     params.permit(:id, :asset)
   end
+  
   # def set_assets
+  #   @asset = 
   # end
 
 end
