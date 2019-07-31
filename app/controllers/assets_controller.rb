@@ -1,4 +1,4 @@
-class AssetController < ApplicationController
+class AssetsController < ApplicationController
   before_action :authenticate_user!
   
   def index
@@ -15,7 +15,6 @@ class AssetController < ApplicationController
   
   def create
     @asset = current_user.assets.new(asset_params[:asset])
-    ...
   end
   
   def edit
@@ -28,14 +27,13 @@ class AssetController < ApplicationController
   
   def destroy
     @asset = current_user.assets.find(asset_params[:id])
-    ...
   end
   
   private
   
   def asset_params
     # whitelist params
-    params.permit(:id, :asset)
+    params.permit(:id, :asset, :user_id, :uploaded_file)
   end
   
   # def set_assets
