@@ -33,6 +33,9 @@ gem "devise"
 # For layout and helpers generators
 gem "nifty-generators", :group => :development
 
+# For uploading files
+gem "paperclip", "~> 2.3"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
