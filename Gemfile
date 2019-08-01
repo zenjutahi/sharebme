@@ -36,6 +36,8 @@ gem "nifty-generators", :group => :development
 # For uploading files
 gem "paperclip", "~> 5.0.0.beta1"
 
+gem 'pry', '~> 0.12.2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

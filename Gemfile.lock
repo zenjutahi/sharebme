@@ -69,6 +69,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -128,6 +129,9 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -232,6 +236,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   nifty-generators
   paperclip (~> 5.0.0.beta1)
+  pry (~> 0.12.2)
   puma (~> 3.11)
   rails (~> 5.2.3)
   ruby-mysql
