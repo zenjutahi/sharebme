@@ -16,12 +16,16 @@ class AssetsController < ApplicationController
   
   def get
     if @asset
-      send_file @asset.uploaded_file.path,
-                                :type => @asset.uploaded_file_content_type, 
-                                :filename => @asset.uploaded_file_file_name,
-                                :disposition => "attachment"
+      source   = URI(@asset.uploaded_file.url.to_s)
+      filename = @asset.uploaded_file_file_name
+      send_data source, filename: filename, disposition: 'download'
+      # send_data @asset.uploaded_file.path,
+      #                           :type => @asset.uploaded_file_content_type, 
+      #                           :filename => filename,
+      #                           :disposition => "attachment"
     else
-      flash[:alert] = "Something went wrong ..."
+      redirect_to assets_path,
+                  flash[:alert] = "Something went wrong ..."
     end
   end
   
