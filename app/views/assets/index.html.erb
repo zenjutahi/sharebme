@@ -10,7 +10,7 @@
   <tbody>
     <% @assets.each do |asset| %>
       <tr>
-        <td><%= link_to asset.file_name, download_path(asset, disposition: "attachment") %></td>
+        <td><%= link_to asset.file_name, download_url(asset), target: :_blank %></td>
         <td><%= link_to 'Show', asset %></td>
         <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
         <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
