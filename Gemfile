@@ -38,6 +38,9 @@ gem "paperclip", ">= 5.2.0"
 
 gem 'pry', '~> 0.12.2'
 
+gem 'aws-sdk', '< 2.0'
+
+gem 'aws-sdk-s3'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
