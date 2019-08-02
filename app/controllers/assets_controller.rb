@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_asset, only: [:show, :destroy, :update,]
+  before_action :set_asset, only: [:show, :destroy, :update, :get]
    
   def index
     @assets = current_user.assets
@@ -12,6 +12,17 @@ class AssetsController < ApplicationController
   
   def new
     @asset = current_user.assets.new
+  end
+  
+  def get
+    if @asset
+      send_file @asset.uploaded_file.path,
+                                :type => @asset.uploaded_file_content_type, 
+                                :filename => @asset.uploaded_file_file_name,
+                                :disposition => "attachment"
+    else
+      flash[:alert] = "Something went wrong ..."
+    end
   end
   
   def create
