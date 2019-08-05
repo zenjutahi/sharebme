@@ -3,7 +3,9 @@ class AssetsController < ApplicationController
   before_action :set_asset, only: [:show, :destroy, :update, :get]
    
   def index
-    @assets = current_user.assets
+    if user_signed_in?
+      @assets = current_user.assets.order("uploaded_file_file_name desc")
+    end
   end
   
   def show

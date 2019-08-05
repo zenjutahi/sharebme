@@ -1,24 +1,21 @@
-<h1>Assets</h1>
-
-<table>
-  <thead class="index-head">
-    <tr>
-      <th>Uploaded Files</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @assets.each do |asset| %>
-      <tr>
-        <td><%= link_to asset.file_name, download_url(asset), target: :_blank %></td>
-        <td><%= link_to 'Show', asset %></td>
-        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
-        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Asset', new_asset_path %>
+<% unless user_signed_in? %> 
+   <h1>Welcome to ShareBox</h1> 
+   <p>File sharing web application you can't ignore.</p> 
+     
+<% else %> 
+  
+   <div class="asset_list_header"> 
+       <div class="file_name_header">File Name</div> 
+       <div class="file_size_header">Size</div> 
+       <div class="file_last_updated_header">Modified</div> 
+   </div> 
+   <div class="asset_list"> 
+       <% @assets.each do |asset| %> 
+           <div class="asset_details"> 
+               <div class="file_name"><%= link_to asset.file_name, download_url(asset), target: :_blank %></div> 
+               <div class="file_size"><%= asset.uploaded_file_file_size %></div> 
+               <div class="file_last_updated"><%= asset.uploaded_file_updated_at %></div> 
+           </div> 
+       <% end %> 
+   </div> 
+<% end %>
