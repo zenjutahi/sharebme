@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :folders
   root :to => "home#index"
   
   get "assets/get/:id" => "assets#get", :as => :download

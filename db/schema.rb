@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_141542) do
+ActiveRecord::Schema.define(version: 2019_08_05_124020) do
 
   create_table "assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2019_07_31_141542) do
     t.bigint "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
     t.index ["user_id"], name: "index_assets_on_user_id"
+  end
+
+  create_table "folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "parent_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_folders_on_parent_id"
+    t.index ["user_id"], name: "index_folders_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -41,6 +41,10 @@ gem 'pry', '~> 0.12.2'
 gem 'aws-sdk', '< 2.0'
 
 gem 'aws-sdk-s3'
+
+#For nested folders 
+gem "acts_as_tree"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -74,3 +78,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mocha', group: :test
