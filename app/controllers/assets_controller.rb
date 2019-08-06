@@ -36,7 +36,7 @@ class AssetsController < ApplicationController
     if @asset.save
       flash[:notice] = "Successfully uploaded the file..."
 
-      redirect_to assets_path
+      redirect_to root_url
     else
       flash[:alert] = "Something went wrong ..."
       redirect_to new_asset_path
