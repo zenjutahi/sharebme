@@ -36,7 +36,7 @@
                   <%= link_to "Rename" %> 
               </div> 
               <div class="delete"> 
-                  <%= link_to "Delete" %> 
+                  <%= link_to "Delete", folder, :confirm => 'Are you sure to delete the folder and all of its contents?', :method => :delete %> 
               </div> 
             </div>
          </div> 
