@@ -73,9 +73,9 @@ class FoldersController < ApplicationController
       format.json { head :no_content }
     end
     if @parent_folder
-     redirect_to browse_path(@parent_folder) 
+     redirect_to browse_path(@parent_folder) and return
     else
-     redirect_to root_url       
+     redirect_to root_url
     end
   end
 
