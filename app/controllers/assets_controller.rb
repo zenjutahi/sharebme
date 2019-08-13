@@ -62,12 +62,17 @@ class AssetsController < ApplicationController
   end
   
   def destroy
+    @parent_folder = @asset.folder
     if @asset.destroy
       flash[:notice] = "Succesfully deleted!"
     else
       flash[:alert] = "Something went wrong..."
     end
-    redirect_to assets_path
+    if @parent_folder
+     redirect_to browse_path(@parent_folder) 
+    else
+     redirect_to root_url 
+    end
   end
   
   private
