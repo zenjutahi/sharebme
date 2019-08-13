@@ -36,11 +36,15 @@ class AssetsController < ApplicationController
   end
   
   def create
-    @asset = current_user.assets.new(asset_params)
+    @asset = current_user.assets.build(asset_params)
     if @asset.save
       flash[:notice] = "Successfully uploaded the file..."
-
-      redirect_to root_url
+      
+      if @asset.folder #checking if we have a parent folder for this file 
+        redirect_to browse_path(@asset.folder)  #then we redirect to the parent folder
+      else
+        redirect_to root_url
+      end
     else
       flash[:alert] = "Something went wrong ..."
       redirect_to new_asset_path
@@ -70,7 +74,7 @@ class AssetsController < ApplicationController
   
   def asset_params
     # whitelist params
-    params.require(:asset).permit([:uploaded_file])
+    params.require(:asset).permit!
   end
   
   def set_asset
