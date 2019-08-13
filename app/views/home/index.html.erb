@@ -52,7 +52,7 @@
                   <%= link_to "Download" %> 
               </div> 
               <div class="delete"> 
-                  <%= link_to "Delete" %> 
+                  <%= link_to "Delete", asset, :confirm => 'Are you sure?', :method => :delete %> 
               </div> 
             </div>
          </div> 
