@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_103845) do
+ActiveRecord::Schema.define(version: 2019_08_14_115040) do
 
   create_table "assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 2019_08_06_103845) do
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_folders_on_parent_id"
     t.index ["user_id"], name: "index_folders_on_user_id"
+  end
+
+  create_table "shared_folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "shared_email"
+    t.integer "shared_user_id"
+    t.integer "folder_id"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_shared_folders_on_folder_id"
+    t.index ["shared_user_id"], name: "index_shared_folders_on_shared_user_id"
+    t.index ["user_id"], name: "index_shared_folders_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
