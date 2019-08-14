@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   
   get "browse/:folder_id" => "home#browse", :as => "browse"
   get "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder"
-  #for uploading files to folders 
+  # for uploading files to folders 
   get "browse/:folder_id/new_file" => "assets#new", :as => "new_sub_file"
+  # for renaming a folder
+  get "browse/:folder_id/rename" => "folders#edit", :as => "rename_folder"
   
   resources :folders
   
