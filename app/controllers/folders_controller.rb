@@ -68,12 +68,9 @@ class FoldersController < ApplicationController
   def destroy
     @parent_folder = @folder.parent #grabbing the parent folder
     @folder.destroy
-    respond_to do |format|
-      format.html { redirect_to folders_url, notice: 'Folder was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "Successfully deleted the folder and all the contents inside."
     if @parent_folder
-     redirect_to browse_path(@parent_folder) and return
+     redirect_to browse_path(@parent_folder)
     else
      redirect_to root_url
     end
