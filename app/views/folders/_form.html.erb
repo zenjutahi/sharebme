@@ -17,6 +17,10 @@
   </div>
   <%= form.hidden_field :parent_id %>
   <div class="actions">
-    <%= form.submit "Create Folder"%>
+    <% if @folder.new_record? %> 
+       <%= form.submit "Create Folder" %> 
+    <% else %> 
+       <%= form.submit "Rename Folder" %> 
+    <% end %> 
   </div>
 <% end %>
