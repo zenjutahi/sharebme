@@ -45,6 +45,10 @@ gem 'aws-sdk-s3'
 #For nested folders 
 gem "acts_as_tree"
 
+gem 'jquery-rails'
+
+gem 'jquery-ui-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
