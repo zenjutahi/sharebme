@@ -2,8 +2,11 @@
 <html>
   <head>
     <title>SharebMe<%= content_for?(:title) ? yield(:title) : "File-sharing web app" %></title>
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "application", "redmond/jquery-ui.css" %>
+    <%= stylesheet_link_tag "application", "redmond/jquery-ui.min.css" %>
+    <%= stylesheet_link_tag "application", "redmond/theme.css" %>
     <%= javascript_include_tag "application" %>
+    
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
