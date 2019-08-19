@@ -14,7 +14,7 @@
  *= require_self
  */
 body {
- background-color: #EFEFEF; 
+ background-color: #D4DADE; 
  font-family: "Lucida Grande","Verdana","Arial","Bitstream Vera Sans",sans-serif; 
  font-size: 14px;
  text-align: left;
@@ -25,7 +25,7 @@ a img {
 }
 
 a {
- color: #0000FF;
+ color: #64C7FF;
 }
 
 .clear {
@@ -56,7 +56,7 @@ a {
 #container {
  width: 800px; 
  margin: 0 auto; 
- background-color: #FFF; 
+ background-color: #F2F8FD; 
  padding: 20px 40px; 
  border: solid 1px #BFBFBF;
 }
@@ -150,7 +150,7 @@ a {
 }
 
 #menu { 
-    width:800px; 
+    width:800px;
     padding:0 20px; 
     margin:20px auto ; 
     overflow:hidden; 
