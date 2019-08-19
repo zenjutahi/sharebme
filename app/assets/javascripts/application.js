@@ -17,6 +17,8 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
+// 
+// location.reload();
 
 $(function () {  
     //open the invitation form when a share button is clicked 
