@@ -6,4 +6,8 @@ class Folder < ApplicationRecord
   
   has_many :assets, :dependent => :destroy
   has_many :shared_folders, :dependent => :destroy
+  
+  def shared?
+    !self.shared_assets.empty?
+  end
 end
