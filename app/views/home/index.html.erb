@@ -24,7 +24,7 @@
    <div class="asset_list">
            <!-- Listing Folders -->
       <% @folders.each do |folder| %> 
-         <div class="asset_details folder"> 
+         <div class="asset_details <%= folder.shared? ? 'shared_folder' : 'folder' %>" id="folder_<%= folder.id %>"> 
              <div class="file_name"><%= link_to folder.name, browse_path(folder) %></div>  
              <div class="file_size"> - </div> 
              <div class="file_last_updated"> - </div>
@@ -59,18 +59,16 @@
       <% end %> 
    </div>
    <div id="invitation_form" title="Invite others to share" style="display:none">
-     <%= form_with(local: true) do |form| %>
-       <div class="let">
-         <div class="field">
-           <%= form.label :"Enter recipient email addresses here" %>
-           <%= form.text_field :email_addresses, :class => 'text ui-widget-content ui-corner-all'%>
-         </div>
-         <div class="field">
-           <%= form.label :"Optional message" %>
-           <%= form.text_area :message, :class => 'text ui-widget-content ui-corner-all'%>
-         </div>
-         <div><%= form.hidden_field :folder_id %></div>
+     <%= form_with(url: "home/share", local: true) do |form| %>
+       <div class="field">
+         <%= form.label :"Enter recipient email addresses here" %>
+         <%= form.text_field :email_addresses, :class => 'text ui-widget-content ui-corner-all'%>
        </div>
+       <div class="field">
+         <%= form.label :"Optional message" %>
+         <%= form.text_area :message, :class => 'text ui-widget-content ui-corner-all'%>
+       </div>
+       <div><%= form.hidden_field :folder_id %></div>
      <% end %>
    </div>
    <!-- <div id="invitation_form" title="Invite others to share"> 
