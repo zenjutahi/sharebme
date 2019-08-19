@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # for renaming a folder
   get "browse/:folder_id/rename" => "folders#edit", :as => "rename_folder"
   
+  get "home/share"
+  
   resources :folders
   
   root :to => "home#index"
