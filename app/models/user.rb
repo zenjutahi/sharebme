@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # This is to make sure the new user ,of which the email addresses already used to share folders by others,        
   def check_and_assign_shared_ids_to_shared_folders
-    shared_folders_with_same_email = SharedFolder.find_all_by_shared_email(self.email)
+    shared_folders_with_same_email = SharedFolder.find_by(shared_email: self.email)
     # First checking if the new user's email exists in any of ShareFolder records
     if shared_folders_with_same_email
       # loop and update the shared user id with this new user id
