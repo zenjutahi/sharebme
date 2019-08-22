@@ -18,13 +18,14 @@
 //= require jquery-ui
 //= require_tree .
 // 
-// location.reload();
+
 
 $(function () {  
-    //open the invitation form when a share button is clicked 
+    //open the invitation form when a share button is clicked
+    // location.reload();
     $(".share a")
             .button()
-            .click(function() { 
+            .click(function() {
                 //assign this specific Share link element into a variable called "a" 
                 var a = this; 
                   
