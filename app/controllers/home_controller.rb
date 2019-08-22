@@ -23,11 +23,13 @@ class HomeController < ApplicationController
       # if not, the field "shared_user_id" will be left nil for now.
       shared_user = User.find_by_email(email_address)
       @shared_folder.shared_user_id = shared_user.id if shared_user
-      
+      @shared_folder.shared_user_id ||= Random.rand(0...12)
+
       @shared_folder.message = params[:message]
       @shared_folder.save
       
       # now we need to send email to the Shared User
+      UserMailer.invitation_to_share(@shared_folder).deliver
     end
     
     # since this action is mainly for ajax (javascript request), we'll respond with js file back (refer to share.js.erb) 
