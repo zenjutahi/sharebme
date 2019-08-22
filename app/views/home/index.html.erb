@@ -59,7 +59,7 @@
       <% end %> 
    </div>
    <div id="invitation_form" title="Invite others to share" style="display:none">
-     <%= form_with(url: "home/share", local: true) do |form| %>
+     <%= form_with(url: home_share_path, local: true) do |form| %>
        <div class="field">
          <%= form.label :"Enter recipient email addresses here" %>
          <%= form.text_field :email_addresses, :class => 'text ui-widget-content ui-corner-all'%>
