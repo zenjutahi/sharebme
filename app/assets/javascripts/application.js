@@ -17,10 +17,10 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
-// 
+//= require jquery-fileupload/basic
 
 
-$(function () {  
+$(document).ready(function () {  
     //open the invitation form when a share button is clicked
     // location.reload();
     $(".share a")
@@ -66,3 +66,4 @@ $(function () {
                 return false; 
             }); 
 });
+
