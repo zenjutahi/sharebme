@@ -3,6 +3,14 @@
 
 <%= render 'form'%>
 
+<div class="progress-wrapper">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar">
+      0%
+    </div>
+  </div>
+</div>
+
 <p> 
 <% if @asset.folder %> 
    <%= link_to "Back to '#{@asset.folder.name}' Folder", browse_path(@asset.folder) %> 
@@ -10,3 +18,16 @@
    <%= link_to "Back", root_url %> 
 <% end %> 
 </p>
+
+
+<script>
+  $(document).ready(function() {
+    var file_form = $('#new_sub_file');
+    file_form.fileupload({dataType: 'script'});
+
+    file_form.on('fileuploadsubmit', function (e, data) {
+      console.log(data.formData)
+      data.formData = {'photo[author]': $('#photo_author').val()};
+    });
+  });
+</script>
