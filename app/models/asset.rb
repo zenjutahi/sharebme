@@ -5,7 +5,7 @@ class Asset < ApplicationRecord
   
   # Set up "uploaded_file" field as attached_file (using Paperclip)
   has_attached_file :uploaded_file,
-                  path: ":Rails_root/assets/:id/:basename.:extension",
+                  path: "assets/:id/:basename.:extension",
                   storage: :s3,
                   s3_host_name: "sharebme.s3-eu-west-3.amazonaws.com",
                   s3_credentials: {
@@ -18,7 +18,7 @@ class Asset < ApplicationRecord
   
   validates_attachment_size :uploaded_file, :less_than => 10.megabytes
   validates_attachment_presence :uploaded_file
-  # validates :record_fingerprint, uniqueness: { message: 'Duplicate document.' }
+  validates :uploaded_file_fingerprint, uniqueness: { message: 'Duplicate document.' }
   
   do_not_validate_attachment_file_type :uploaded_file
   
