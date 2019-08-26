@@ -16,15 +16,6 @@
   </p>
   <%= form.hidden_field :folder_id %>
   <div class="actions">
-    <%= form.submit "Upload" %>
+    <%= form.submit "Upload", id: 'fileUpload', data: { disable_with: 'Uploading' }, class: 'btn btn-primary btn-sm'%>
   </div>
 <% end %>
-
-<!-- <%= form_for @asset, :html => {:multipart => true} do |f| %> 
-  <%= f.error_messages %> 
-    <p> 
-        <%= f.label :uploaded_file, "File" %><br /> 
-        <%= f.file_field :uploaded_file %> 
-      </p> 
-  <p><%= f.submit "Upload" %></p> 
-<% end %> -->
