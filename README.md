@@ -45,7 +45,7 @@ rails s
 ```
 
 ## Demo
-The app is hosted on heroku at: https://lms-file-transfer.herokuapp.com.
+The app is hosted on heroku at: https://lms-file-transfers.herokuapp.com.
 
 ## Licensing
 This app is licensed under the MIT license.
