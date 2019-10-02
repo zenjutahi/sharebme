@@ -6,7 +6,7 @@ A simple web based file transfer application.
 ### Clone the repository
 
 ```shell
-https://github.com/dhul-husni/lms-file-transfer.git
+https://github.com/zenjutahi/sharebme.git
 cd sharebme
 ```
 
@@ -44,8 +44,6 @@ rails db:create db:migrate
 rails s
 ```
 
-## Demo
-The app is hosted on heroku at: https://lms-file-transfers.herokuapp.com.
 
 ## Licensing
 This app is licensed under the MIT license.
