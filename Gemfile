@@ -5,8 +5,9 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+# Use postgresql as the database for Active Record
+gem 'pg'
+# gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -45,7 +46,10 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'aws-sdk-s3'
 
-#For nested folders 
+# For upload
+gem 'paperclip-cloudinary'
+
+#For nested folders
 gem "acts_as_tree"
 
 gem 'jquery-rails'
