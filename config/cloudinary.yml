@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dse2w5id1
+  api_key: '749668554292277'
+  api_secret: 91Nx42ogm2S2W5SEakSCVqh_MRA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dse2w5id1
+  api_key: '749668554292277'
+  api_secret: 91Nx42ogm2S2W5SEakSCVqh_MRA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dse2w5id1
+  api_key: '749668554292277'
+  api_secret: 91Nx42ogm2S2W5SEakSCVqh_MRA
+  enhance_image_tag: true
+  static_file_support: false

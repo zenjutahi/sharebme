@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_08_23_131218) do
 
-  create_table "assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "assets", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_131218) do
     t.index ["user_id"], name: "index_assets_on_user_id"
   end
 
-  create_table "folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "folders", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
     t.integer "user_id"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_131218) do
     t.index ["user_id"], name: "index_folders_on_user_id"
   end
 
-  create_table "shared_folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "shared_folders", force: :cascade do |t|
     t.integer "user_id"
     t.string "shared_email"
     t.integer "shared_user_id"
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_08_23_131218) do
     t.index ["user_id"], name: "index_shared_folders_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

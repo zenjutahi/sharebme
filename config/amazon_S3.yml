@@ -1,0 +1,11 @@
+development:
+  access_key_id: your_own_access_key_id
+  secret_access_key: your_own_secret_access_key
+
+staging:
+  access_key_id: your_own_access_key_id
+  secret_access_key: your_own_secret_access_key
+
+production:
+  access_key_id: your_own_access_key_id
+  secret_access_key: your_own_secret_access_key
