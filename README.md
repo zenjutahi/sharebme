@@ -1,4 +1,4 @@
-# LMS file Transfer
+# Sharebme file Transfer
 A simple web based file transfer application.
 
 ## Install
@@ -43,6 +43,10 @@ rails db:create db:migrate
 ```shell
 rails s
 ```
+### Expected Views
+
+#### Login View
+Coming soon.. 😬
 
 
 ## Licensing
