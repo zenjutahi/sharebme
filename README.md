@@ -44,9 +44,17 @@ rails db:create db:migrate
 rails s
 ```
 ### Expected Views
+#### Welcome View
+![Alt text](https://zenjy.s3-us-west-2.amazonaws.com/Screenshot+2020-03-10+at+12.31.29.png "Optional title")
+
+#### Sign Up View
+![Alt text](https://zenjy.s3-us-west-2.amazonaws.com/Screenshot+2020-03-10+at+12.36.47.png "Optional title")
 
 #### Login View
-Coming soon.. 😬
+![Alt text](https://zenjy.s3-us-west-2.amazonaws.com/Screenshot+2020-03-10+at+12.36.36.png "Optional title")
+
+#### DashBoard View after creating a folder
+![Alt text](https://zenjy.s3-us-west-2.amazonaws.com/Screenshot+2020-03-10+at+12.30.56.png "Optional title")
 
 
 ## Licensing
