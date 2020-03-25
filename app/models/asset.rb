@@ -4,27 +4,27 @@ class Asset < ApplicationRecord
   belongs_to :user
 
   # Set up "uploaded_file" field as attached_file (using Paperclip)
-  # has_attached_file :uploaded_file,
-  #                 path: "assets/:id/:basename.:extension",
-  #                 storage: :s3,
-  #                 s3_host_name: "sharebme.s3-eu-west-3.amazonaws.com",
-  #                 s3_credentials: {
-  #                   access_key_id: "AKIAXSDKOY47SLUY6Q7O",
-  #                   secret_access_key: "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",
-  #                   s3_region: "eu-west-3",
-  #                   bucket: "sharebme"
-  #                 }
-
   has_attached_file :uploaded_file,
-                    :storage => :cloudinary,
-                    :path => "shareBme/items",
-                    :s3_credentials => {
-                      cloud_name: "dse2w5id1",
-                      api_key: "749668554292277",
-                      api_secret: "91Nx42ogm2S2W5SEakSCVqh_MRA",
-                      enhance_image_tag: true,
-                      static_file_support: true
-                    }
+                  path: "assets/:id/:basename.:extension",
+                  storage: :s3,
+                  s3_host_name: "sharebme.s3-us-west-2.amazonaws.com",
+                  s3_credentials: {
+                    access_key_id: "AKIAI6OOYHSL3V3ZHTGA",
+                    secret_access_key: "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",
+                    s3_region: "us-west-2",
+                    bucket: "zenjy"
+                  }
+
+  # has_attached_file :uploaded_file,
+  #                   :storage => :cloudinary,
+  #                   :path => "shareBme/items",
+  #                   :s3_credentials => {
+  #                     cloud_name: "dse2w5id1",
+  #                     api_key: "749668554292277",
+  #                     api_secret: "91Nx42ogm2S2W5SEakSCVqh_MRA",
+  #                     enhance_image_tag: true,
+  #                     static_file_support: true
+  #                   }
 
 
   validates_attachment_size :uploaded_file, :less_than => 10.megabytes
