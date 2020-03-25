@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   after_create :check_and_assign_shared_ids_to_shared_folders
-  
-    
+  validates :name, uniqueness: true
+
+
   has_many :assets
   has_many :folders
   # this is for folders which this user has shared
@@ -12,9 +13,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
 
-  # This is to make sure the new user ,of which the email addresses already used to share folders by others,        
+
+  # This is to make sure the new user ,of which the email addresses already used to share folders by others,
   def check_and_assign_shared_ids_to_shared_folders
     shared_folders_with_same_email = SharedFolder.find_by(shared_email: self.email)
     # First checking if the new user's email exists in any of ShareFolder records
@@ -26,6 +27,6 @@ class User < ApplicationRecord
       end
     end
   end
-  
-       
+
+
 end
