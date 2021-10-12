@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.3'
 gem 'pg'
 # gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Testing
 group :development, :test do
   gem 'rspec-rails', ">= 3.9.0"
